@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<!-- DOCTYPE = HTML5 დოკუმენტის ტიპის დეკლარაცია -->
+<!-- ბრაუზერს უთხრა რომ ეს არის HTML5 ფორმატი -->
+
+<html lang="en">
+  <!-- html = HTML დოკუმენტის root (ძირითადი) ელემენტი -->
+  <!-- lang="en" = დოკუმენტის ენა ინგლისურია -->
+  <!-- საჭიროა SEO-სთვის და accessibility-სთვის -->
+
+  <head>
+    <!-- head = დოკუმენტის მეტა-ინფორმაცია -->
+    <!-- head-ის შიგთავსი არ ჩანს გვერდზე -->
+    <!-- შეიცავს: მეტა ტეგებს, სტილებს, სკრიპტებს, სათაურს -->
+
+    <meta charset="UTF-8" />
+    <!-- charset = character encoding (სიმბოლოების კოდირება) -->
+    <!-- UTF-8 = უნივერსალური კოდირება (ყველა ენა და სიმბოლო) -->
+    <!-- საჭიროა ქართული, რუსული, არაბული და სხვა ენებისთვის -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- viewport = მობილური მოწყობილობებისთვის responsive დიზაინის პარამეტრები -->
+    <!-- width=device-width = სიგანე უდრის მოწყობილობის ეკრანის სიგანეს -->
+    <!-- initial-scale=1.0 = საწყისი zoom დონე 100% -->
+    <!-- ეს აუცილებელია responsive დიზაინისთვის -->
+
+    <title>Document</title>
+    <!-- title = გვერდის სათაური (ბრაუზერის ტაბში ჩანს) -->
+    <!-- SEO-სთვის ძალიან მნიშვნელოვანია -->
+    <!-- რეალურ პროექტში: "Sphere Constructions - Leaders in Quality" -->
+
+    <link rel="stylesheet" href="./style.css" />
+    <!-- link = გარე CSS ფაილის დაკავშირება -->
+    <!-- rel="stylesheet" = რელაცია არის stylesheet -->
+    <!-- href="./style.css" = CSS ფაილის მისამართი -->
+    <!--   ./ = მიმდინარე დირექტორია (იგივე ფოლდერი) -->
+  </head>
+
+  <body>
+    <!-- body = გვერდის ხილული კონტენტი -->
+    <!-- body-ში ყველაფერი რაც ჩანს browser-ში -->
+
+    <!-- ===================================
+         HEADER SECTION - ჰედერის სექცია
+         ===================================
+         ლოგოთი და ნავიგაციის მენიუთი
+    -->
+
+    <header>
+      <!-- header = HTML5 სემანტიკური ელემენტი ჰედერისთვის -->
+      <!-- CSS-ში: background-color: #1e2d3b (მუქი ლურჯი) -->
+      <!-- height: 100px, display: flex -->
+
+      <div class="logo-container">
+        <!-- div = container element (ბლოკი) -->
+        <!-- class="logo-container" = CSS კლასი -->
+        <!-- CSS-ში:
+             - width: 332px, height: 100%
+             - background-color: #edcd1f (ყვითელი)
+             - display: flex, gap: 20px
+        -->
+
+        <!-- ===================================
+             SVG LOGO - SVG ლოგო (vector გრაფიკა)
+             ===================================
+        -->
+
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          data-bbox="-88.7 -33.025 177.4 181.925"
+          viewBox="-88.7 -33.025 177.4 181.925"
+          height="200"
+          width="200"
+          xmlns="http://www.w3.org/2000/svg"
+          data-type="shape"
+          role="presentation"
+          aria-hidden="true"
+        >
+          <!-- svg = Scalable Vector Graphics (მასშტაბირებადი vector გრაფიკა) -->
+          <!-- SVG = გრაფიკული ფორმატი რომელიც არ კარგავს ხარისხს zoom-ში -->
+
+          <!-- preserveAspectRatio="xMidYMid meet" -->
+          <!--   განსაზღვრავს როგორ შევინარჩუნოთ aspect ratio (პროპორცია) -->
+          <!--   xMidYMid = ცენტრში განლაგება -->
+          <!--   meet = მთელი SVG ეტევა container-ში -->
+
+          <!-- viewBox="-88.7 -33.025 177.4 181.925" -->
+          <!--   განსაზღვრავს კოორდინატთა სისტემას SVG-სთვის -->
+          <!--   format: "min-x min-y width height" -->
+          <!--   -88.7 = X საწყისი წერტილი -->
+          <!--   -33.025 = Y საწყისი წერტილი -->
+          <!--   177.4 = სიგანე SVG კოორდინატებში -->
+          <!--   181.925 = სიმაღლე SVG კოორდინატებში -->
+
+          <!-- height="200" width="200" -->
+          <!--   SVG-ს ფაქტიური ზომა პიქსელებში -->
+          <!--   CSS-ში გადაიწერება: width: 47px, height: 48px -->
+
+          <!-- xmlns="http://www.w3.org/2000/svg" -->
+          <!--   XML namespace (სახელთა სივრცე SVG-სთვის) -->
+          <!--   აუცილებელია SVG-ს სწორად რენდერინგისთვის -->
+
+          <!-- role="presentation" -->
+          <!--   accessibility attribute -->
+          <!--   "presentation" = დეკორაციული ელემენტი (არ არის მნიშვნელოვანი კონტენტი) -->
+
+          <!-- aria-hidden="true" -->
+          <!--   ARIA (Accessible Rich Internet Applications) attribute -->
+          <!--   true = screen readers-ისგან დამალული -->
+          <!--   დეკორაციული SVG-ებისთვის -->
+
+          <g>
+            <!-- g = group element (ჯგუფის ელემენტი) -->
+            <!-- აერთიანებს რამდენიმე SVG ელემენტს -->
+
+            <path
+              d="M88.4 38V5.1c0-1.3-1.6-2.5-2.8-2.8L.8-32.8c-.6-.3-1.9-.3-2.5 0L-86.8 2.3c-.9.3-1.9 1.6-1.9 2.8V38c0 1.3.6 2.5 1.9 2.8L-46 58l-40.8 17c-1.3.3-1.9 1.6-1.9 2.8v32.9c0 1.3.6 2.5 1.9 2.8L-2 148.6c.4.1 1 .3 1.3.3s.8-.1 1.2-.3l85.4-35.1c1.3-.6 2.8-1.6 2.8-2.8V77.9c0-1.3-1.6-2.5-2.8-2.8L44.4 58l41.4-17.1c1.3-.3 2.6-1.6 2.6-2.9zM-.8 111.1l-40.8-17.4L-.8 76.3 40 93.7-.8 111.1zm0-41.4L-29.3 58-.8 46.3 27.7 58-.8 69.7zm0-31.3L-41.6 21-.8 3.6 40 21-.8 38.4zM-3.3-1.8l-46.2 19.6-28.1-12 74.3-31v23.4zm51.8 19.6L3-1.8v-23.4L77.3 5.5 48.5 17.8zM-82.4 36.1V10.8l74.3 31.6-29.4 12.3-44.9-18.6zm73.1 37l-40.8 17.4-28.5-12 40.8-16.8 28.5 11.4zm-73.1 10.5l79.1 33.2v24.4l-79.1-32.3V83.6zM3 141.1v-24.4l79.1-33.2v25.3L3 141.1zm73.7-62.9l-28.5 12L7.4 73.1l28.5-11.7 40.8 16.8zM36.5 54.5L7.4 42.1 82 10.5v25.3L36.5 54.5z"
+            ></path>
+            <!-- path = SVG path element (გზის ელემენტი) -->
+            <!-- d = path data (გზის მონაცემები) -->
+            <!--   M = MoveTo (გადაადგილება) -->
+            <!--   L = LineTo (ხაზის დახატვა) -->
+            <!--   V = Vertical line -->
+            <!--   c = curve (მრუდი) -->
+            <!--   z = ClosePath (გზის დახურვა) -->
+            <!-- ეს კოდი ხატავს 3D კუბის ფორმას (Sphere Constructions ლოგო) -->
+          </g>
+        </svg>
+
+        <div class="logo"><span>SPHERE</span>CONSTRUCTIONS</div>
+        <!-- div class="logo" = ლოგოს ტექსტი -->
+        <!-- CSS-ში:
+             - display: flex, flex-direction: column
+             - font-size: 23px
+             - cursor: pointer (ხელის cursor)
+        -->
+
+        <!-- span = inline ელემენტი ტექსტის ნაწილის გამოსაყოფად -->
+        <!-- <span>SPHERE</span> = პირველი ხაზი -->
+        <!--   CSS-ში: font-weight: bold (გასქელებული) -->
+        <!-- CONSTRUCTIONS = მეორე ხაზი (ნორმალური font-weight) -->
+        <!-- შედეგი:
+             SPHERE (bold)
+             CONSTRUCTIONS (normal)
+        -->
+      </div>
+
+      <nav class="nav-menu">
+        <!-- nav = HTML5 სემანტიკური ელემენტი ნავიგაციისთვის -->
+        <!-- class="nav-menu" = CSS კლასი -->
+
+        <ul class="nav-links">
+          <!-- ul = unordered list (დაუნომრავი სია) -->
+          <!-- class="nav-links" = CSS კლასი -->
+          <!-- CSS-ში:
+               - display: flex (ჰორიზონტალური განლაგება)
+               - gap: 60px (60px სივრცე ლინკებს შორის)
+               - list-style: none (bullets-ის გარეშე)
+          -->
+
+          <li>
+            <!-- li = list item (სიის ელემენტი) -->
+
+            <a href="./landing.html" class="nav-link active">HOME</a>
+            <!-- a = anchor tag (ლინკი) -->
+            <!-- href="./landing.html" = ბმული landing.html გვერდზე -->
+            <!--   ./ = მიმდინარე დირექტორია -->
+            <!--   landing.html = ფაილის სახელი -->
+            <!-- class="nav-link active" = ორი კლასი -->
+            <!--   nav-link = საერთო სტილი ყველა ლინკისთვის -->
+            <!--   active = აქტიური გვერდის სტილი -->
+            <!-- CSS-ში:
+                 .nav-link { color: white; }
+                 .active { color: #edcd1f; } (ყვითელი)
+            -->
+            <!-- HOME = ლინკის ტექსტი -->
+          </li>
+
+          <li>
+            <a href="#" class="nav-link">SERVICES</a>
+            <!-- href="#" = placeholder ბმული (არაფერ არ აკეთებს) -->
+            <!-- რეალურ პროექტში: href="services.html" ან href="#services" -->
+          </li>
+
+          <li>
+            <a href="#" class="nav-link">ABOUT</a>
+            <!-- ABOUT = "ჩვენს შესახებ" გვერდი -->
+          </li>
+
+          <li>
+            <a href="#" class="nav-link">PROJECTS</a>
+            <!-- PROJECTS = "პროექტები" გვერდი -->
+          </li>
+
+          <li>
+            <a href="#" class="nav-link">CONTACT</a>
+            <!-- CONTACT = "კონტაქტი" გვერდი -->
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===================================
+         MAIN CONTENT - მთავარი კონტენტი
+         ===================================
+    -->
+
+    <main>
+      <!-- main = HTML5 სემანტიკური ელემენტი მთავარი კონტენტისთვის -->
+
+      <!-- ===================================
+           HERO SECTION - მთავარი banner სექცია
+           ===================================
+           Landing Page-ის პირველი და ყველაზე მნიშვნელოვანი სექცია
+      -->
+
+      <section class="hero-section">
+        <!-- section = HTML5 სემანტიკური ელემენტი სექციისთვის -->
+        <!-- class="hero-section" = CSS კლასი -->
+        <!-- Hero Section = Landing Page-ების მთავარი სექცია -->
+        <!--   - დიდი background სურათი -->
+        <!--   - მთავარი სათაური (headline) -->
+        <!--   - Call-to-Action (CTA) ღილაკი -->
+        <!-- CSS-ში:
+             - background-image: url("...") (დიდი სურათი)
+             - height: calc(100vh - 100px) (სრული ეკრანი - header)
+             - display: flex, justify-content: center
+             - background-size: cover (სურათი ფარავს მთელ სექციას)
+        -->
+
+        <div class="hero-texts">
+          <!-- div class="hero-texts" = hero-ს ტექსტის container -->
+          <!-- CSS-ში:
+               - width: 680px (შეზღუდული სიგანე)
+               - display: flex, flex-direction: column
+               - align-items: center (ცენტრში)
+               - gap: 30px (სივრცე ელემენტებს შორის)
+          -->
+
+          <h1>LEADERS IN QUALITY CONSTRUCTION AND INFRASTRUCTURE</h1>
+          <!-- h1 = heading level 1 (მთავარი სათაური) -->
+          <!-- ყოველ გვერდზე უნდა იყოს მხოლოდ ერთი h1 (SEO) -->
+          <!-- CSS-ში:
+               - font-size: 60px (ძალიან დიდი)
+               - color: white (თეთრი)
+               - text-align: center (ცენტრში)
+          -->
+          <!-- "LEADERS IN QUALITY CONSTRUCTION AND INFRASTRUCTURE" -->
+          <!--   = მთავარი მესიჯი/სლოგანი -->
+
+          <img
+            fetchpriority="high"
+            sizes="55px"
+            srcset="
+              https://static.wixstatic.com/media/c19c76_376dc1d20bd348b99c4a732a1d6d7c81.png/v1/fill/w_55,h_31,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c19c76_376dc1d20bd348b99c4a732a1d6d7c81.png 1x,
+              https://static.wixstatic.com/media/c19c76_376dc1d20bd348b99c4a732a1d6d7c81.png/v1/fill/w_88,h_50,al_c,lg_1,q_85,enc_avif,quality_auto/c19c76_376dc1d20bd348b99c4a732a1d6d7c81.png               2x
+            "
+            id="img_comp-ihpx2cm9"
+            src="https://static.wixstatic.com/media/c19c76_376dc1d20bd348b99c4a732a1d6d7c81.png/v1/fill/w_55,h_31,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c19c76_376dc1d20bd348b99c4a732a1d6d7c81.png"
+            alt="Arrow Down"
+            style="object-fit: cover"
+            class="BI8PVQ Tj01hh"
+            width="55"
+            height="31"
+          />
+          <!-- img = image element (სურათი) -->
+
+          <!-- fetchpriority="high" -->
+          <!--   განსაზღვრავს სურათის ჩატვირთვის პრიორიტეტს -->
+          <!--   high = მაღალი პრიორიტეტი (პირველად ჩაიტვირთება) -->
+          <!--   საჭიროა Hero Section-ის სურათებისთვის -->
+
+          <!-- sizes="55px" -->
+          <!--   განსაზღვრავს სურათის ზომას responsive design-ში -->
+          <!--   55px = სურათი ყოველთვის 55px სიგანის იქნება -->
+
+          <!-- srcset = responsive images (რამდენიმე ზომის სურათი) -->
+          <!--   1x = ნორმალური resolution (standard screens) -->
+          <!--   2x = მაღალი resolution (Retina displays, 4K monitors) -->
+          <!--   browser-ი ავტომატურად ირჩევს შესაბამის სურათს -->
+          <!--   w_55 = სიგანე 55px -->
+          <!--   w_88 = სიგანე 88px (2x resolution-ისთვის) -->
+          <!--   h_31 = სიმაღლე 31px -->
+          <!--   h_50 = სიმაღლე 50px (2x resolution-ისთვის) -->
+
+          <!-- src = default სურათი -->
+          <!--   გამოიყენება თუ srcset არ მუშაობს -->
+          <!--   fallback image -->
+
+          <!-- alt="Arrow Down" -->
+          <!--   alternative text (ალტერნატიული ტექსტი) -->
+          <!--   ჩანს თუ სურათი არ ჩაიტვირთა -->
+          <!--   საჭიროა accessibility-სთვის (screen readers) -->
+          <!--   SEO-სთვის -->
+          <!--   "Arrow Down" = ისრის ხატულა ქვემოთ -->
+
+          <!-- style="object-fit: cover" -->
+          <!--   inline CSS (პირდაპირ HTML-ში) -->
+          <!--   object-fit: cover = სურათი ფარავს container-ს (არ დეფორმირდება) -->
+          <!--   cover = ავსებს სივრცეს, aspect ratio არ იცვლება -->
+          <!--   contain = სრულად ჩანს, aspect ratio არ იცვლება -->
+
+          <!-- width="55" height="31" -->
+          <!--   სურათის ზომები პიქსელებში -->
+          <!--   browser-ს ეხმარება სწრაფად render-ში -->
+          <!--   თავიდან აგვაცილებს layout shift-ს -->
+        </div>
+      </section>
+
+      <!-- ===================================
+           SERVICE SECTION - სერვისების სექცია
+           ===================================
+      -->
+
+      <section class="service-section">
+        <h2 class="section-title">SERVICES</h2>
+        <div class="yellow-line"></div>
+
+        <div class="card-container">
+          <div class="card">
+            <img
+              src="https://static.wixstatic.com/media/c19c76_22d8ec47d1484b09a9c333e4141a12a0.jpg/v1/fill/w_300,h_225,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c19c76_22d8ec47d1484b09a9c333e4141a12a0.jpg"
+              alt=""
+            />
+            <div class="card-text">
+              <h3>Preconstruction Planning</h3>
+              <p>
+                I'm a paragraph. Click here to add your own text and edit me.
+                It’s easy. Just click “Edit Text” or double click me to add your
+                own content and make changes to the font.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="https://static.wixstatic.com/media/b31d0e84cb714761b2b1f06c305023c7.jpg/v1/fill/w_300,h_225,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b31d0e84cb714761b2b1f06c305023c7.jpg"
+              alt=""
+            />
+            <div class="card-text">
+              <h3>Architectural Modelling</h3>
+              <p>
+                I'm a paragraph. Click here to add your own text and edit me.
+                It’s easy. Just click “Edit Text” or double click me to add your
+                own content and make changes to the font.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="https://static.wixstatic.com/media/9e456adff0ee4a2c847cfd67a62454a3.jpg/v1/fill/w_300,h_225,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9e456adff0ee4a2c847cfd67a62454a3.jpg"
+              alt=""
+            />
+            <div class="card-text">
+              <h3>Construction Management</h3>
+              <p>
+                I'm a paragraph. Click here to add your own text and edit me.
+                It’s easy. Just click “Edit Text” or double click me to add your
+                own content and make changes to the font.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section class="service-section" = სერვისების სექცია -->
+      <!-- ცარიელია (კონტენტი არ არის დამატებული) -->
+      <!-- მომავალში შეივსება:
+           - რა სერვისებს სთავაზობს კომპანია
+           - სერვისების ბარათები (cards)
+           - სერვისების აღწერები
+      -->
+
+      <!-- ===================================
+           ABOUT SECTION - "ჩვენს შესახებ" სექცია
+           ===================================
+      -->
+
+      <section class="about-section">
+        <div class="about-container">
+          <div class="about-leftside">
+            <div class="about-leftside-texts">
+              <h2 class="section-title">ABOUT</h2>
+              <div class="yellow-line"></div>
+              <p class="about-p">
+                I'm a paragraph. Click here to add your own text and edit me.
+                It’s easy. Just click “Edit Text” or double click me to add your
+                own content and make changes to the font. Feel free to drag and
+                drop me anywhere you like on your page. I’m a great place for
+                you to tell a story and let your users know a little more about
+                you.​This is a great space to write long text about your company
+                and your services. You can use this space to go into a little
+                more detail about your company. Talk about your team and what
+                services you provide. Tell your visitors the story of how you
+                came up with the idea for your business and what makes you
+                different from your competitors. Make your company stand out and
+                show your visitors who you are.
+              </p>
+            </div>
+          </div>
+          <div class="about-rightside"></div>
+        </div>
+        <div class="about-stats">
+          <div class="stats-card">
+            <h3>2035</h3>
+            <p>Year Established</p>
+          </div>
+
+          <div class="white-pipe"></div>
+
+          <div class="stats-card">
+            <h3>206</h3>
+            <p>Projects Completed</p>
+          </div>
+
+          <div class="white-pipe"></div>
+
+          <div class="stats-card">
+            <h3>870</h3>
+            <p>Contractors Appointed</p>
+          </div>
+
+          <div class="white-pipe"></div>
+
+          <div class="stats-card">
+            <h3>26</h3>
+            <p>Awards Won</p>
+          </div>
+        </div>
+      </section>
+      <!-- section class="about-section" = "ჩვენს შესახებ" სექცია -->
+      <!-- ცარიელია -->
+      <!-- მომავალში შეივსება:
+           - კომპანიის ისტორია
+           - მისია და ხედვა
+           - გუნდის წევრები
+      -->
+
+      <!-- ===================================
+           PROJECTS SECTION - პროექტების სექცია
+           ===================================
+      -->
+
+      <section class="projects-section"></section>
+      <!-- section class="projects-section" = პროექტების სექცია -->
+      <!-- ცარიელია -->
+      <!-- მომავალში შეივსება:
+           - დასრულებული პროექტების gallery
+           - პროექტების აღწერები
+           - before/after სურათები
+      -->
+
+      <!-- ===================================
+           CLIENTS SECTION - კლიენტების სექცია
+           ===================================
+      -->
+
+      <section class="clients-section"></section>
+      <!-- section class="clients-section" = კლიენტების სექცია -->
+      <!-- ცარიელია -->
+      <!-- მომავალში შეივსება:
+           - კლიენტების ლოგოები
+           - testimonials (მიმოხილვები)
+           - რეიტინგები
+      -->
+
+      <!-- ===================================
+           FOOTER - ქვედა ნაწილი
+           ===================================
+      -->
+
+      <footer>
+        <!-- footer = HTML5 სემანტიკური ელემენტი footer-ისთვის -->
+        <!-- შენიშვნა: footer არის main-ის შიგნით - ეს არასტანდარტულია! -->
+        <!-- ჩვეულებრივ footer უნდა იყოს main-ის გარეთ:
+             <main>...</main>
+             <footer>...</footer>
+        -->
+        <!-- რეკომენდაცია: footer გადაიტანოთ main-ის გარეთ -->
+
+        <section class="contact-section"></section>
+        <!-- section class="contact-section" = კონტაქტის სექცია -->
+        <!-- ცარიელია -->
+        <!-- მომავალში შეივსება:
+             - კონტაქტის ინფორმაცია (ტელეფონი, email, მისამართი)
+             - კონტაქტის ფორმა
+             - რუკა (Google Maps)
+             - სოციალური მედიის ლინკები
+        -->
+      </footer>
+    </main>
+  </body>
+</html>
+
+<!-- ===================================
+     Landing Page სტრუქტურა:
+     ===================================
+     Landing Page = სპეციალური გვერდი მარკეტინგული მიზნებისთვის
+     
+     კლასიკური Landing Page სტრუქტურა:
+     1. Header - ლოგო და ნავიგაცია
+     2. Hero Section - მთავარი banner (დიდი სურათი + სლოგანი + CTA)
+     3. Features/Services - მთავარი თვისებები/სერვისები
+     4. About - კომპანიის შესახებ
+     5. Portfolio/Projects - პროექტები/სამუშაოები
+     6. Testimonials/Clients - მიმოხილვები/კლიენტები
+     7. Contact - კონტაქტის ფორმა
+     8. Footer - ქვედა ნაწილი (links, copyright, social media)
+-->
+
+<!-- ===================================
+     SVG vs PNG/JPG:
+     ===================================
+     SVG (Scalable Vector Graphics):
+       ✅ არ კარგავს ხარისხს zoom-ში
+       ✅ პატარა ფაილის ზომა
+       ✅ შეიძლება შეიცვალოს CSS-ით (color, size)
+       ✅ იდეალურია ლოგოებისთვის, icons
+       ❌ არ არის შესაფერისი ფოტოებისთვის
+     
+     PNG/JPG:
+       ✅ იდეალურია ფოტოებისთვის
+       ✅ რთული დეტალები
+       ❌ კარგავს ხარისხს zoom-ში
+       ❌ დიდი ფაილის ზომა
+-->
+
+<!-- ===================================
+     srcset და Responsive Images:
+     ===================================
+     srcset საშუალებას გვაძლევს რამდენიმე ზომის სურათი მივუთითოთ:
+     
+     <img srcset="small.jpg 480w, medium.jpg 768w, large.jpg 1024w">
+     
+     Browser-ი ავტომატურად ირჩევს შესაბამის სურათს:
+     - პატარა ეკრანი (mobile) → small.jpg
+     - საშუალო ეკრანი (tablet) → medium.jpg
+     - დიდი ეკრანი (desktop) → large.jpg
+     
+     1x vs 2x:
+     - 1x = ნორმალური screen (1920x1080)
+     - 2x = Retina display (iPhone, MacBook) - ორმაგი resolution
+-->
+
+<!-- ===================================
+     რა ვისწავლეთ ამ ფაილში:
+     ===================================
+     1. Landing Page Structure - hero, features, about, projects, contact
+     2. SVG Elements - vector graphics, path, viewBox
+     3. Semantic HTML5 - header, nav, main, section, footer
+     4. Responsive Images - srcset, sizes, 1x/2x
+     5. Image Optimization - fetchpriority, alt text
+     6. Navigation Menu - ul > li > a structure
+     7. Active State - .active class for current page
+     8. Logo Design - SVG + text combination
+     9. Hero Section - main banner with headline
+     10. Placeholder Sections - empty sections for future content
+     11. Accessibility - alt text, aria-hidden, role attributes
+     12. SEO Best Practices - h1, semantic HTML, alt text
+-->

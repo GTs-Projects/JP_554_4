@@ -1,0 +1,577 @@
+/* ===================================
+   UNIVERSAL RESET - უნივერსალური Reset
+   ===================================
+   ყველა HTML ელემენტს უსუფთავებს default სტილებს
+*/
+
+* {
+  /* * = universal selector (ყველა ელემენტი) */
+  /* ყველა HTML ტეგს გადაეცემა ეს სტილები */
+
+  margin: 0;
+  /* margin: 0 = გარე მინდორი 0-ია (ყველა მხარეს) */
+  /* ბრაუზერები default margin-ს ამატებენ (h1, p, body, და ა.შ.) */
+  /* margin: 0 უსუფთავებს ყველა default margin-ს */
+
+  padding: 0;
+  /* padding: 0 = შიდა მინდორი 0-ია (ყველა მხარეს) */
+  /* default padding-ის წაშლა */
+
+  box-sizing: border-box;
+  /* box-sizing: border-box = CSS Box Model-ის შეცვლა */
+  /* border-box = width და height მოიცავს padding-ს და border-ს */
+  /* მაგალითი:
+       width: 300px, padding: 20px, border: 5px
+       content-box (default): სრული სიგანე = 350px
+       border-box: სრული სიგანე = 300px (padding და border შიგნით)
+  */
+}
+
+/* ===================================
+   HEADER STYLES - ჰედერის სტილები
+   ===================================
+   ზედა ნავიგაციის ბარი (fixed არ არის)
+*/
+
+header {
+  /* header = element selector */
+
+  width: 100%;
+  /* width: 100% = სრული სიგანე */
+
+  height: 100px;
+  /* height: 100px = სიმაღლე 100 პიქსელი */
+
+  display: flex;
+  /* display: flex = Flexbox layout */
+  /* children ელემენტები (logo-container და nav) ხდება flex items */
+
+  justify-content: space-between;
+  /* justify-content = flex items-ის განლაგება main axis-ზე (ჰორიზონტალურად) */
+  /* space-between = პირველი item მარცხნივ, ბოლო item მარჯვნივ */
+  /* შედეგი: logo-container მარცხნივ, nav მარჯვნივ */
+
+  align-items: center;
+  /* align-items = flex items-ის განლაგება cross axis-ზე (ვერტიკალურად) */
+  /* center = ვერტიკალურად ცენტრში */
+
+  padding-right: 60px;
+  /* padding-right = მარჯვენა შიდა მინდორი 60px */
+  /* ქმნის სივრცეს header-ის მარჯვენა მხარეს */
+
+  background-color: #1e2d3b;
+  /* background-color = ფონის ფერი */
+  /* #1e2d3b = hexadecimal color code */
+  /*   #1e = წითელი (30 decimal) */
+  /*   2d = მწვანე (45 decimal) */
+  /*   3b = ლურჯი (59 decimal) */
+  /* შედეგი: მუქი ლურჯი ფერი */
+}
+
+/* ===================================
+   LOGO CONTAINER STYLES - ლოგოს კონტეინერის სტილები
+   ===================================
+*/
+
+.logo-container {
+  /* .logo-container = class selector */
+
+  width: 332px;
+  /* width = სიგანე 332 პიქსელი (fixed სიგანე) */
+
+  height: 100%;
+  /* height: 100% = სიმაღლე 100% parent-იდან (header-ის სიმაღლე = 100px) */
+  /* შედეგი: logo-container-ის სიმაღლე = 100px */
+
+  display: flex;
+  /* display: flex = Flexbox layout */
+  /* children: svg და .logo */
+
+  justify-content: center;
+  /* justify-content: center = ჰორიზონტალურად ცენტრში */
+
+  align-items: center;
+  /* align-items: center = ვერტიკალურად ცენტრში */
+
+  background-color: #edcd1f;
+  /* background-color = ფონის ფერი */
+  /* #edcd1f = ყვითელი/ოქროსფერი (gold) */
+  /* ეს არის brand color (ბრენდის ფერი) */
+
+  gap: 20px;
+  /* gap = flex items-ს შორის სივრცე */
+  /* 20px სივრცე svg-სა და .logo ტექსტს შორის */
+}
+
+.logo-container svg {
+  /* .logo-container svg = descendant selector (შთამომავალი სელექტორი) */
+  /* svg რომელიც არის .logo-container-ის შიგნით */
+
+  width: 47px;
+  /* width = SVG-ს სიგანე 47 პიქსელი */
+  /* HTML-ში width="200"-ის გადაწერა */
+
+  height: 48px;
+  /* height = SVG-ს სიმაღლე 48 პიქსელი */
+  /* HTML-ში height="200"-ის გადაწერა */
+}
+
+/* ===================================
+   LOGO TEXT STYLES - ლოგოს ტექსტის სტილები
+   ===================================
+*/
+
+.logo {
+  /* .logo = class selector */
+
+  display: flex;
+  /* display: flex = Flexbox layout */
+
+  justify-content: center;
+  /* justify-content: center = ჰორიზონტალურად ცენტრში */
+
+  align-items: start;
+  /* align-items: start = ზემოდან განლაგება */
+  /* start = flex-start (ვერტიკალურად ზემოდან) */
+  /* center = ცენტრში */
+  /* end = ქვემოდან */
+
+  flex-direction: column;
+  /* flex-direction = flex items-ის მიმართულება */
+  /* column = ვერტიკალური განლაგება (ზემოდან ქვემოთ) */
+  /* row (default) = ჰორიზონტალური */
+  /* შედეგი:
+       SPHERE (ზემოთ)
+       CONSTRUCTIONS (ქვემოთ)
+  */
+
+  font-size: 23px;
+  /* font-size = ტექსტის ზომა 23 პიქსელი */
+
+  cursor: pointer;
+  /* cursor = თაგუნას cursor-ის ტიპი */
+  /* pointer = ხელის cursor (როგორც ლინკზე) */
+  /* default = ისრის cursor */
+  /* ეს ნიშნავს რომ logo clickable არის (შეიძლება დააწკაპო) */
+}
+
+.logo span {
+  /* .logo span = descendant selector */
+  /* span რომელიც არის .logo-ს შიგნით */
+  /* HTML-ში: <span>SPHERE</span> */
+
+  font-weight: bold;
+  /* font-weight = ტექსტის სისქე/წონა */
+  /* bold = მუქი/გასქელებული (700) */
+  /* normal = ნორმალური (400) */
+  /* შედეგი: "SPHERE" გასქელებულია, "CONSTRUCTIONS" ნორმალურია */
+}
+
+/* ===================================
+   NAVIGATION LINKS STYLES - ნავიგაციის ლინკების სტილები
+   ===================================
+*/
+
+.nav-links {
+  /* .nav-links = class selector (ul element) */
+
+  display: flex;
+  /* display: flex = Flexbox layout */
+  /* li ელემენტები განლაგდება ჰორიზონტალურად */
+
+  justify-content: center;
+  /* justify-content: center = ჰორიზონტალურად ცენტრში */
+
+  align-items: center;
+  /* align-items: center = ვერტიკალურად ცენტრში */
+
+  list-style: none;
+  /* list-style: none = სიის bullets-ის (წერტილების) წაშლა */
+  /* default: ul-ს აქვს bullets (•) თითოეული li-ს წინ */
+  /* none = bullets არ ჩანს */
+
+  gap: 60px;
+  /* gap = flex items-ს შორის სივრცე */
+  /* 60px სივრცე თითოეულ ლინკს შორის */
+  /* HOME --- SERVICES --- ABOUT --- PROJECTS --- CONTACT */
+
+  margin-top: 20px;
+  /* margin-top = ზედა გარე მინდორი 20px */
+  /* ქმნის სივრცეს ul-ს ზემოდან */
+}
+
+/* ===================================
+   NAVIGATION LINK STYLES - ნავიგაციის ლინკის სტილები
+   ===================================
+*/
+
+.nav-link {
+  /* .nav-link = class selector (a element) */
+
+  text-decoration: none;
+  /* text-decoration = ტექსტის დეკორაცია */
+  /* none = ხაზგასმა არ არის */
+  /* default: a (links) აქვთ underline (ქვედა ხაზი) */
+  /* none = underline წაიშლება */
+
+  color: white;
+  /* color = ტექსტის ფერი თეთრი */
+  /* default: a (links) არიან ლურჯები */
+  /* white = თეთრი ლინკები მუქ ფონზე */
+
+  font-size: 14px;
+  /* font-size = ტექსტის ზომა 14 პიქსელი */
+  /* პატარა ზომა navigation-ისთვის */
+}
+
+/* ===================================
+   ACTIVE LINK STYLE - აქტიური ლინკის სტილი
+   ===================================
+*/
+
+.active {
+  /* .active = class selector */
+  /* გამოიყენება აქტიური/მიმდინარე გვერდის ლინკზე */
+
+  color: #edcd1f;
+  /* color = ტექსტის ფერი */
+  /* #edcd1f = ყვითელი/ოქროსფერი (იგივე რაც logo-container-ის ფონი) */
+  /* აქტიური ლინკი გამოირჩევა ყვითელი ფერით */
+  /* მაგალითად: თუ ვართ HOME გვერდზე, HOME ლინკი იქნება ყვითელი */
+}
+
+/* ===================================
+   LINK HOVER EFFECT - ლინკის hover ეფექტი
+   ===================================
+*/
+
+.nav-link:hover {
+  /* .nav-link:hover = pseudo-class selector */
+  /* :hover = pseudo-class (ფსევდო-კლასი) */
+  /* :hover = როდესაც თაგვი ელემენტზეა */
+  /* სხვა pseudo-classes:
+       :active = როდესაც დაწკაპებულია
+       :focus = როდესაც focus-შია
+       :visited = როდესაც უკვე ნავიგაცია გაკეთდა
+  */
+
+  color: #edcd1f;
+  /* color = ტექსტის ფერი ყვითელი */
+  /* როდესაც თაგვს ლინკზე მიაქვს, ლინკი გახდება ყვითელი */
+  /* hover effect = visual feedback user-ისთვის */
+}
+
+/* ===================================
+   HERO SECTION STYLES - hero სექციის სტილები
+   ===================================
+   Landing Page-ის მთავარი banner სექცია
+*/
+
+.hero-section {
+  /* .hero-section = class selector */
+
+  background-image: url("https://static.dezeen.com/uploads/2023/07/msg-sphere-las-vegas-lit-up-populous.hero_.jpg");
+  /* background-image = ფონის სურათი */
+  /* url() = CSS function სურათის URL-ისთვის */
+  /* სრული URL გარე სერვერიდან */
+  /* ეს არის დიდი არქიტექტურული სურათი (Sphere building Las Vegas-ში) */
+  /* შეესაბამება კომპანიის სახელს "SPHERE CONSTRUCTIONS" */
+
+  width: 100%;
+  /* width: 100% = სრული სიგანე */
+
+  height: calc(100vh - 100px);
+  /* height = დინამიური სიმაღლე */
+  /* calc() = CSS calculation function (გამოთვლის ფუნქცია) */
+  /*   100vh = viewport height (ეკრანის სრული სიმაღლე) */
+  /*   vh = viewport height unit (1vh = 1% ეკრანის სიმაღლე) */
+  /*   - 100px = header-ის სიმაღლე */
+  /* შედეგი: hero იკავებს მთელ ეკრანს header-ის გარდა */
+  /* მაგალითად: 1080px screen → 1080 - 100 = 980px */
+
+  display: flex;
+  /* display: flex = Flexbox layout */
+
+  justify-content: center;
+  /* justify-content: center = ჰორიზონტალურად ცენტრში */
+  /* hero-texts div იქნება ცენტრში */
+
+  padding-top: 80px;
+  /* padding-top = ზედა შიდა მინდორი 80px */
+  /* ქმნის სივრცეს სექციის ზემოდან */
+  /* hero-texts არ იქნება ზუსტად ზემოდან, არამედ 80px ქვემოთ */
+
+  background-size: cover;
+  /* background-size = ფონის სურათის ზომა */
+  /* cover = სურათი ფარავს მთელ container-ს */
+  /*   - aspect ratio (პროპორცია) არ იცვლება */
+  /*   - სურათი შეიძლება გაიჭრას (crop) */
+  /* contain = სრულად ჩანს, არ იჭრება */
+  /* auto = სურათის ორიგინალური ზომა */
+}
+
+/* ===================================
+   HERO TEXTS CONTAINER - hero-ს ტექსტის კონტეინერი
+   ===================================
+*/
+
+.hero-texts {
+  /* .hero-texts = class selector */
+
+  width: 680px;
+  /* width = შეზღუდული სიგანე 680 პიქსელი */
+  /* შეზღუდული სიგანე უკეთესია წაკითხვადობისთვის */
+  /* ძალიან ფართო ტექსტი რთულად იკითხება */
+
+  display: flex;
+  /* display: flex = Flexbox layout */
+
+  justify-content: start;
+  /* justify-content: start = ზემოდან განლაგება */
+  /* start = flex-start */
+  /* children (h1 და img) იქნება ზემოდან */
+
+  align-items: center;
+  /* align-items: center = ჰორიზონტალურად ცენტრში */
+  /* h1 და img ცენტრში გასწორდება */
+
+  flex-direction: column;
+  /* flex-direction: column = ვერტიკალური განლაგება */
+  /* შედეგი:
+       h1 (ზემოთ)
+       img (ქვემოთ)
+  */
+
+  gap: 30px;
+  /* gap = 30px სივრცე h1-სა და img-ს შორის */
+}
+
+/* ===================================
+   HERO HEADING STYLES - hero-ს სათაურის სტილები
+   ===================================
+*/
+
+.hero-texts h1 {
+  /* .hero-texts h1 = descendant selector */
+  /* h1 რომელიც არის .hero-texts-ის შიგნით */
+
+  font-size: 60px;
+  /* font-size = ტექსტის ზომა 60 პიქსელი */
+  /* ძალიან დიდი ზომა hero section-ის სათაურისთვის */
+  /* Landing Page-ის მთავარი სათაური ყოველთვის დიდი უნდა იყოს */
+
+  color: white;
+  /* color = ტექსტის ფერი თეთრი */
+  /* საჭიროა რადგან background სურათი მუქია */
+  /* კონტრასტი: მუქი ფონი + თეთრი ტექსტი = კარგი წაკითხვადობა */
+
+  text-align: center;
+  /* text-align = ტექსტის განლაგება */
+  /* center = ცენტრში */
+  /* left = მარცხნივ */
+  /* right = მარჯვნივ */
+  /* justify = გათანაბრება */
+}
+
+/* ===================================
+   რა ვისწავლეთ ამ ფაილში:
+   ===================================
+   1. CSS Reset - *, margin, padding, box-sizing
+   2. Flexbox Layout - display, justify-content, align-items, flex-direction, gap
+   3. Colors - hex codes (#1e2d3b, #edcd1f)
+   4. Positioning & Spacing - width, height, margin, padding
+   5. Typography - font-size, font-weight, text-align, color
+   6. Background Images - background-image, background-size: cover
+   7. CSS Calculations - calc(100vh - 100px)
+   8. Viewport Units - vh (viewport height)
+   9. Pseudo-classes - :hover for interactive effects
+   10. Descendant Selectors - .logo-container svg, .hero-texts h1
+   11. Cursor Styles - cursor: pointer
+   12. Text Decoration - text-decoration: none
+   13. List Styling - list-style: none
+   14. Landing Page Design - hero section, navigation, branding
+*/
+
+/* ===================================
+   Landing Page დიზაინის პრინციპები:
+   ===================================
+   1. Hero Section = პირველი შთაბეჭდილება
+      - დიდი background სურათი
+      - მკაფიო და დიდი სათაური
+      - კონტრასტული ფერები
+   
+   2. Branding = ბრენდის იდენტობა
+      - ლოგო (SVG + text)
+      - Brand colors (#edcd1f ყვითელი)
+      - Consistent typography
+   
+   3. Navigation = მარტივი ნავიგაცია
+      - მკაფიო ლინკები
+      - Active state
+      - Hover effects
+   
+   4. Visual Hierarchy = ვიზუალური იერარქია
+      - დიდი სათაური (60px)
+      - პატარა ნავიგაცია (14px)
+      - კონტრასტული ფერები
+   
+   5. Whitespace = სუფთა სივრცე
+      - gap: 60px ლინკებს შორის
+      - padding-top: 80px hero section-ში
+      - margin-top: 20px navigation-ში
+*/
+
+/* ===================================
+   Responsive Design შენიშვნები:
+   ===================================
+   ამ CSS-ში არ არის media queries responsive design-ისთვის.
+   რეალურ პროექტში დამატებით საჭიროა:
+   
+   @media (max-width: 768px) {
+     .hero-texts h1 {
+       font-size: 40px;
+     }
+     .nav-links {
+       flex-direction: column;
+       gap: 20px;
+     }
+   }
+*/
+
+.service-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  gap: 20px;
+}
+
+.section-title {
+  font-size: 55px;
+  color: #1e2d3b;
+}
+
+.yellow-line {
+  width: 116px;
+  height: 10px;
+  background-color: #edcd1f;
+}
+
+.card {
+  width: 300px;
+  height: 480px;
+}
+
+.card img {
+  width: 300px;
+  height: 225px;
+}
+
+.card-text {
+  background-color: #f7f7f7;
+  padding: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 255px;
+}
+
+.card-text h3 {
+  font-size: 22px;
+  color: #3d5975;
+  width: 60%;
+}
+
+.card-text p {
+  color: #3b3a3a;
+  font-size: 15px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.about-container {
+  height: 683px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-leftside {
+  width: 50%;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 60px;
+}
+
+.about-leftside-texts {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.about-p {
+  margin-top: 30px;
+  font-size: 17px;
+  color: #3b3a3a;
+  line-height: 30px;
+}
+
+.about-rightside {
+  width: 50%;
+  background-image: url("https://static.wixstatic.com/media/c19c76_427a7bbf62474f74968cb087499c7a3e.jpg/v1/fill/w_1254,h_729,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c19c76_427a7bbf62474f74968cb087499c7a3e.jpg");
+  background-size: cover;
+}
+
+.about-stats {
+  height: 230px;
+  background-color: #edcd1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-card {
+  width: 180px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.stats-card h3 {
+  font-size: 60px;
+  text-align: center;
+  color: #3d5975;
+}
+
+.stats-card p {
+  font-size: 22px;
+  text-align: center;
+  color: #3d5975;
+  font-weight: bold;
+  width: min-content;
+}
+
+.white-pipe {
+  width: 2px;
+  height: 70px;
+  background-color: white;
+}
